@@ -1,6 +1,6 @@
 name: custom:simple-webhook
 version: 0.0.10
-minDynatraceVersion: "1.285"
+minDynatraceVersion: "1.335"
 author:
   name: "Dynatrace"
 
@@ -8,7 +8,7 @@ python:
   runtime:
     module: simple_webhook
     version:
-      min: "3.10"
+      min: "3.14"
 
   activation:
     remote:
