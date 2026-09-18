@@ -1,0 +1,60 @@
+{
+  "types": {
+    "pythonRemote": {
+      "type": "object",
+      "properties": {
+        "tenant_url": {
+          "displayName": "Tenant URL",
+          "description": "The base URL of the Dynatrace tenant (e.g. https://abc12345.live.dynatrace.com)",
+          "type": "text",
+          "default": "",
+          "nullable": false,
+          "constraints": [
+            { "type": "NOT_BLANK", "customMessage": "This is a mandatory field." },
+            { "type": "NOT_EMPTY", "customMessage": "This is a mandatory field." }
+          ]
+        },
+        "token": {
+          "displayName": "API Token",
+          "description": "Dynatrace API Token with ingest.logs scope",
+          "type": "secret",
+          "default": "",
+          "nullable": false,
+          "constraints": [
+            { "type": "NOT_BLANK", "customMessage": "This is a mandatory field." },
+            { "type": "NOT_EMPTY", "customMessage": "This is a mandatory field." }
+          ]
+        },
+        "port": {
+          "displayName": "Listening port",
+          "description": "A listening port on which to receive logs. The extension will fail if the port is not available.",
+          "type": "integer",
+          "default": 9000,
+          "nullable": false,
+          "constraints": [
+            { "type": "RANGE", "minimum": 1, "maximum": 65535, "customMessage": "The port is mandatory and must be between 1 and 65535."}
+          ]
+        }
+      }
+    }
+  },
+  "dynatrace": "1",
+  "description": "https_listener configuration",
+  "schemaId": "python-extension.activation",
+  "displayName": "https_listener configuration",
+  "ownerProductManagement": "dynatrace",
+  "ownerDevelopment": "dynatrace",
+  "maturity": "GENERAL_AVAILABILITY",
+  "allowedScopes": [
+    "tenant"
+  ],
+  "multiObject": false,
+  "properties": {
+    "pythonRemote": {
+      "displayName": "Config",
+      "type": {
+        "$ref": "#/types/pythonRemote"
+      }
+    }
+  }
+}

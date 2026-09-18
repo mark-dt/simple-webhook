@@ -1,0 +1,11 @@
+{
+	"enabled": true,
+	"description": "simple_webhook activation",
+	"version": "0.0.1",
+	"activationContext": "REMOTE",
+	"pythonRemote": {
+		"tenant_url": "https://<environment-id>.live.dynatrace.com/",
+		"token": "dt0c01.<your-api-token-with-logs.ingest-scope>",
+		"port": 9000
+	}
+}
